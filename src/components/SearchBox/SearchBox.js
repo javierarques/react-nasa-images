@@ -5,18 +5,23 @@ import './SearchBox.css';
 
 class SearchBox extends React.Component {
   static propTypes = {
-    onSubmit: PropTypes.func
+    onSubmit: PropTypes.func,
+    query: PropTypes.string,
+    shadow: PropTypes.bool
   };
 
   static defaultProps = {
-    onSubmit: () => {}
+    onSubmit: () => {},
+    query: '',
+    shadow: true
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    const { query } = this.props;
 
     this.state = {
-      query: ''
+      query: query || ''
     };
   }
 
@@ -38,9 +43,13 @@ class SearchBox extends React.Component {
 
   render() {
     const { query } = this.state;
+    const { shadow } = this.props;
 
     return (
-      <form className="SearchBox" onSubmit={this.handleSubmit}>
+      <form
+        className={`SearchBox ${shadow ? 'SearchBox--withShadow' : ''}`}
+        onSubmit={this.handleSubmit}
+      >
         <input
           value={query}
           onChange={this.handleChange}

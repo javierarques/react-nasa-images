@@ -1,0 +1,40 @@
+@import '../../styles/_config.scss';
+@import '../../styles/_mixins.scss';
+
+.Header {
+  width: 100%;
+  padding: $spacer 0;
+  align-self: baseline;
+  background-color: #fff;
+  border-bottom: 1px solid #dae0e4;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
+  @include from-medium {
+    padding: $spacer 0;
+  }
+}
+
+.Header-wrapper {
+  @include wrapper;
+  display: flex;
+  align-items: center;
+}
+
+.Header-logoLink {
+  margin-right: $spacer-sm;
+}
+
+.Header-logo {
+  display: inline-block;
+  height: 52px;
+  width: auto;
+  vertical-align: middle;
+
+  @include from-medium() {
+    height: 64px;
+  }
+}
+
+.Header-content {
+  width: 100%;
+}

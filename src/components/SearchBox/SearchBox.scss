@@ -8,7 +8,7 @@
 .SearchBox-input {
   display: block;
   width: 100%;
-  padding: 1rem;
+  padding: $spacer-sm;
   padding-right: 4rem;
   font-family: $font-family;
   color: #38495b;
@@ -19,7 +19,7 @@
   appearance: none;
   line-height: normal;
   font-size: rem(16px);
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+  border: 2px solid $color-gray-lighter;
 
   transition: 200ms border, background, box-shadow, color ease-in-out;
   will-change: border, background, box-shadow, color;
@@ -31,11 +31,27 @@
   &:focus,
   &:hover {
     background-color: #fff;
-    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.6);
+    border-color: $color-primary;
+
+    ~ .SearchBox-submitButton .SearchBox-icon {
+      fill: $color-primary;
+    }
   }
 
   @include from-medium {
+    padding: $spacer;
+    padding-right: 4rem;
     font-size: rem(18px);
+  }
+
+  .SearchBox--withShadow & {
+    border: 0;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.6);
+    }
   }
 }
 

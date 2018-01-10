@@ -1,6 +1,7 @@
 @import '_config.scss';
 
 @mixin wrapper($max-width: $max-width) {
+  width: 100%;
   max-width: $max-width;
   margin: auto;
   padding: 0 $spacer;

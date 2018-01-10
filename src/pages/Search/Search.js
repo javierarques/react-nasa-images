@@ -1,4 +1,22 @@
 import React from 'react';
-const Home = () => <h1>SEARCH PAGE</h1>;
+import Header from '../../components/Header';
+import SearchBox from '../../components/SearchBox';
 
-export default Home;
+class Search extends React.Component {
+  handleSubmit = query => {
+    const { history } = this.props;
+    history.push(`/search/${query}`);
+  };
+
+  render() {
+    const { match: { params: { query } } } = this.props;
+
+    return (
+      <Header>
+        <SearchBox onSubmit={this.handleSubmit} shadow={false} query={query} />
+      </Header>
+    );
+  }
+}
+
+export default Search;

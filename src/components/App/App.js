@@ -11,8 +11,8 @@ const App = () => (
     <div className="App">
       <main className="App-content">
         <Route exact path="/" component={Home} />
-        <Route path="/search" component={Search} />
-        <Route path="/asset" component={Asset} />
+        <Route path="/search/:query" component={Search} />
+        <Route path="/asset/:id" component={Asset} />
       </main>
       <Footer />
     </div>
