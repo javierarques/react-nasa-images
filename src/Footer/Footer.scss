@@ -1,0 +1,35 @@
+@import '../_config.scss';
+@import '../_mixins.scss';
+
+.Footer {
+  padding: $spacer-sm;
+  font-size: rem(12px);
+  text-align: center;
+  color: #b5b5b5;
+  background: #fff;
+
+  @include from-medium {
+    text-align: right;
+  }
+}
+
+.Footer-wrapper {
+  @include wrapper;
+}
+
+.Footer-link {
+  color: #333;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.Footer-icon {
+  margin-right: 2px;
+  vertical-align: -2px;
+  margin-left: 2px;
+  width: 14px;
+  height: auto;
+}
