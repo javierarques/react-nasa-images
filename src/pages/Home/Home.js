@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchBox from '../SearchBox';
+import SearchBox from '../../components/SearchBox';
+import nasaLogo from '../../assets/nasa-logo.svg';
 import './Home.css';
-import nasaLogo from '../nasa-logo.svg';
 
 const getRandom = max => Math.floor(Math.random() * max) + 1;
 
