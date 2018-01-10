@@ -1,19 +1,23 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import SearchBoxIcon from './SearchBoxIcon';
 import './SearchBox.css';
 
-export class SearchBox extends React.Component {
+class SearchBox extends React.Component {
+  static propTypes = {
+    onSubmit: PropTypes.func
+  };
+
+  static defaultProps = {
+    onSubmit: () => {}
+  };
+
   constructor() {
     super();
 
     this.state = {
       query: ''
     };
-  }
-  search(query) {
-    const { history } = this.props;
-    history.push(`/search/${query}`);
   }
 
   handleChange = e =>
@@ -24,10 +28,11 @@ export class SearchBox extends React.Component {
   handleSubmit = e => {
     if (e) e.preventDefault();
 
+    const { onSubmit } = this.props;
     const { query } = this.state;
 
     if (query) {
-      this.search(query);
+      onSubmit(query);
     }
   };
 
@@ -50,4 +55,4 @@ export class SearchBox extends React.Component {
   }
 }
 
-export default withRouter(SearchBox);
+export default SearchBox;
