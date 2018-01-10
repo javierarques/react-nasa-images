@@ -12,7 +12,7 @@ describe('NASA API', () => {
       }
     };
 
-    const url = `${NASA_API_URL}/search?q=${query}`;
+    const url = `${NASA_API_URL}/search?q=${query}&media_type=image`;
     const config = {
       matcher: url,
       response: dummyFetchResponse,
