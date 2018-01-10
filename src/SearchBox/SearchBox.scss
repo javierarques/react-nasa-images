@@ -8,23 +8,21 @@
 .SearchBox-input {
   display: block;
   width: 100%;
+  padding: 1rem;
+  padding-right: 4rem;
   font-family: $font-family;
-  font-size: 14px;
   color: #38495b;
   background-color: #fdfdfd;
   border: 0;
   border-radius: 3px;
   outline: 0;
   appearance: none;
-  transition: 200ms border, background, box-shadow, color ease-in-out;
-  will-change: border, background, color;
-  padding: 1rem;
-  padding-right: 4rem;
   line-height: normal;
   font-size: rem(16px);
-
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
-  transition: all 200ms ease-in-out;
+
+  transition: 200ms border, background, box-shadow, color ease-in-out;
+  will-change: border, background, box-shadow, color;
 
   &::placeholder {
     color: $color-gray-lighter;
@@ -42,14 +40,26 @@
 }
 
 .SearchBox-icon {
+  fill: $color-gray-lighter;
+  transition: all 200ms ease-in-out;
+
+  .SearchBox:hover & {
+    fill: $color-primary;
+  }
+}
+
+.SearchBox-submitButton {
   position: absolute;
   right: 1rem;
   top: calc(50% - 16px);
-  fill: $color-gray-lighter;
 
-  transition: all 200ms ease-in-out;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
 
-  .SearchBox-input:hover ~ & {
-    fill: $color-gray;
-  }
+  background: none;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
 }

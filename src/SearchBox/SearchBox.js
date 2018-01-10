@@ -17,7 +17,9 @@ const SearchBox = () => (
   <form>
     <div className="SearchBox">
       <input className="SearchBox-input" placeholder="Search the space..." />
-      <SearchBoxIcon />
+      <button className="SearchBox-submitButton">
+        <SearchBoxIcon />
+      </button>
     </div>
   </form>
 );
