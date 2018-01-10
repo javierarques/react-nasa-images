@@ -1,0 +1,18 @@
+$font-family: 'Nunito', sans-serif;
+$font-size-root: 16px;
+$font-size-base: 16px;
+$max-width: 1024px;
+
+$color-primary: #1a5dad;
+
+$color-gray: #7a8fa2;
+$color-gray-light: lighten(#7a8fa2, 10%);
+$color-gray-lighter: lighten(#7a8fa2, 20%);
+$color-gray-dark: darken(#7a8fa2, 20%);
+$color-gray-darker: darken(#7a8fa2, 20%);
+
+$spacer-xs: 0.5rem;
+$spacer-sm: 0.8rem;
+$spacer: 1rem;
+$spacer-lg: 2rem;
+$spacer-xl: 3rem;

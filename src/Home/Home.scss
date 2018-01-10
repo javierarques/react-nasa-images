@@ -1,0 +1,52 @@
+@import '../_config.scss';
+@import '../_mixins.scss';
+
+.Home {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@for $i from 1 through 10 {
+  .Home--bg#{$i} {
+    background-image: linear-gradient(
+        to right,
+        rgba(#000, 0.6),
+        rgba(#000, 0.6)
+      ),
+      url('./backgrounds/#{$i}.jpg');
+  }
+}
+
+.Home-logo {
+  display: flex;
+  margin-top: -4rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: $spacer-xl;
+}
+
+.Home-title {
+  margin: 0;
+  font-size: rem(24px);
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+
+  @include from-medium {
+    font-size: rem(28px);
+  }
+}
+
+.Home-content {
+  @include wrapper(460px);
+  width: 100%;
+  text-align: center;
+}
