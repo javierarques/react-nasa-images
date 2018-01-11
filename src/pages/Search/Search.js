@@ -49,7 +49,9 @@ class Search extends React.Component {
     const { assets, isLoading } = this.state;
 
     const galleryItems = assets.map(({ image, nasaId, title }) => {
-      return <GalleryItem image={image} key={nasaId} title={title} />;
+      return (
+        <GalleryItem image={image} id={nasaId} key={nasaId} title={title} />
+      );
     });
 
     const seachContent = () => {
