@@ -26,26 +26,6 @@ describe('fetch json', () => {
         done();
       });
     });
-
-    test('camelizes response keys', done => {
-      const dummyFetchResponse = {
-        camelize_me: 'value'
-      };
-
-      const url = 'an_url';
-      const config = {
-        matcher: url,
-        response: dummyFetchResponse,
-        method: 'GET'
-      };
-
-      fetchMock.mock(config);
-
-      fetchJson(url).then(response => {
-        expect(response).toHaveProperty('camelizeMe');
-        done();
-      });
-    });
   });
 
   describe('422 status', () => {

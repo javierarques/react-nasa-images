@@ -1,5 +1,6 @@
 import React from 'react';
 import api from '../../services/api';
+import normalize from '../../services/normalize';
 import Header from '../../components/Header';
 import SearchBox from '../../components/SearchBox';
 import Gallery from '../../components/Gallery';
@@ -29,9 +30,8 @@ class Search extends React.Component {
     api
       .search(query)
       .then(response => {
-        const { collection: { items: assets } } = response;
         this.setState({ isLoading: false });
-        this.setState({ assets: assets });
+        this.setState({ assets: normalize.search(response) });
       })
       .catch(error => {
         this.setState({ isLoading: false });
@@ -48,12 +48,8 @@ class Search extends React.Component {
     const { match: { params: { query = '' } } } = this.props;
     const { assets, isLoading } = this.state;
 
-    const galleryItems = assets.map(({ data, links }) => {
-      const id = data[0].nasaId;
-      const title = data[0].title;
-      const image = links[0].href;
-
-      return <GalleryItem image={image} id={id} key={id} title={title} />;
+    const galleryItems = assets.map(({ image, nasaId, title }) => {
+      return <GalleryItem image={image} key={nasaId} title={title} />;
     });
 
     const seachContent = () => {

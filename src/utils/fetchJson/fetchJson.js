@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import { camelizeKeys } from 'humps';
 
 const fetchJson = (url, options = {}) => {
   const defaultOptions = {
@@ -26,14 +25,7 @@ const fetchJson = (url, options = {}) => {
       }
     );
 
-  const camelizeJSON = json =>
-    camelizeKeys(json, (key, convert) => {
-      return /^[A-Z0-9_]+$/.test(key) ? key : convert(key);
-    });
-
-  return fetch(url, fetchOptions)
-    .then(checkResponse)
-    .then(camelizeJSON);
+  return fetch(url, fetchOptions).then(checkResponse);
 };
 
 export default fetchJson;
