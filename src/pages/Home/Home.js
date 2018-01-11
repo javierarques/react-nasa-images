@@ -17,8 +17,8 @@ export class Home extends React.Component {
       <div className={`Home Home--bg${getRandom(10)}`}>
         <div className="Home-content">
           <div className="Home-logo">
-            <img src={nasaLogo} alt="NASA logo" width="80" />
-            <h1 className="Home-title">media library</h1>
+            <img src={nasaLogo} alt="NASA" width="80" title="NASA images" />
+            <h1 className="Home-title">images</h1>
           </div>
           <SearchBox onSubmit={this.handleSubmit} />
         </div>
