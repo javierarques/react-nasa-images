@@ -11,3 +11,14 @@
   padding-top: $spacer;
   padding-bottom: $spacer;
 }
+
+.Search-errorMessage {
+  color: $color-gray;
+  font-size: rem(18px);
+  text-align: center;
+  margin: 4rem 2rem;
+
+  @include from-medium {
+    font-size: rem(24px);
+  }
+}

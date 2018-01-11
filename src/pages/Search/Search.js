@@ -56,6 +56,20 @@ class Search extends React.Component {
       return <GalleryItem image={image} id={id} key={id} title={title} />;
     });
 
+    const seachContent = () => {
+      if (isLoading) return <Loader />;
+
+      if (assets.length > 0) return <Gallery>{galleryItems}</Gallery>;
+
+      if (assets.length === 0)
+        return (
+          <p className="Search-errorMessage">
+            Ooops, we haven't found anything in the space, please search with
+            other term.
+          </p>
+        );
+    };
+
     return (
       <div className="Search">
         <div className="Search-header">
@@ -67,10 +81,7 @@ class Search extends React.Component {
             />
           </Header>
         </div>
-        <div className="Search-content">
-          {isLoading && <Loader />}
-          <Gallery>{galleryItems}</Gallery>
-        </div>
+        <div className="Search-content">{seachContent()}</div>
       </div>
     );
   }
