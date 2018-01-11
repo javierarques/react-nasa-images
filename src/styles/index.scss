@@ -39,3 +39,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+  height: auto;
+}
+
+.Site {
+  height: 100%;
+  width: 100%;
+}
