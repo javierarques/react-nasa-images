@@ -1,0 +1,25 @@
+$gallery-gap: 1rem;
+
+.Gallery {
+  margin: auto;
+  padding: 0;
+  column-gap: $gallery-gap;
+}
+
+.Gallery > * {
+  display: inline-block;
+  background: #fff;
+  margin: 0 0 $gallery-gap;
+}
+
+@media only screen and (min-width: 460px) {
+  .Gallery {
+    column-count: 2;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Gallery {
+    column-count: 3;
+  }
+}

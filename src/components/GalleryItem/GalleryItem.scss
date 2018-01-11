@@ -1,0 +1,52 @@
+@import '../../styles/_config.scss';
+@import '../../styles/_mixins.scss';
+
+.GalleryItem {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 0 $spacer;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+
+  transition-property: box-shadow;
+  transition-duration: 200ms;
+  // will-change: box-shadow, transform;
+
+  &:hover {
+    // transform: translate(0, -2px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.GalleryItem-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.GalleryItem-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+
+.GalleryItem-title {
+  padding: 1rem;
+  padding-top: 0;
+  margin: 0;
+  text-decoration: none;
+  color: $color-gray-dark;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: rem(14px);
+  line-height: 1.3;
+
+  @include from-medium {
+    font-size: rem(15px);
+  }
+}

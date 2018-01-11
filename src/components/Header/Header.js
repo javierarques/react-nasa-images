@@ -11,7 +11,8 @@ const Header = ({ children }) => {
         <Link to="/" className="Header-logoLink">
           <img
             src={nasaLogo}
-            alt="NASA logo"
+            alt="NASA images"
+            title="NASA images"
             height="64"
             className="Header-logo"
           />

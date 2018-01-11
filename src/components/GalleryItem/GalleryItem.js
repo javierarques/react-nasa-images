@@ -1,0 +1,26 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import './GalleryItem.css';
+
+const GalleryItem = ({ image, id, title }) => (
+  <article className="GalleryItem">
+    <Link className="GalleryItem-wrapper" to={`/asset/${id}`} title={title}>
+      <img
+        src={image}
+        alt={title}
+        title={title}
+        className="GalleryItem-image"
+      />
+      {title && <p className="GalleryItem-title">{title}</p>}
+    </Link>
+  </article>
+);
+
+GalleryItem.propType = {
+  image: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
+};
+
+export default GalleryItem;

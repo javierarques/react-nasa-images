@@ -1,0 +1,13 @@
+@import '../../styles/_config.scss';
+@import '../../styles/_mixins.scss';
+
+.Search {
+  width: 100%;
+  height: 100%;
+}
+
+.Search-content {
+  @include wrapper;
+  padding-top: $spacer;
+  padding-bottom: $spacer;
+}
