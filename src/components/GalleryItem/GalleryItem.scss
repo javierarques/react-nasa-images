@@ -28,13 +28,6 @@
   text-decoration: none;
 }
 
-.GalleryItem-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  padding: 1rem;
-}
-
 .GalleryItem-title {
   padding: 1rem;
   padding-top: 0;
@@ -48,5 +41,30 @@
 
   @include from-medium {
     font-size: rem(15px);
+  }
+}
+
+.GalleryItem-imageWrapper {
+  display: block;
+  margin: $spacer;
+  background-image: url('./loader.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.GalleryItem-image {
+  display: block;
+  width: 100%;
+  max-height: 800px;
+
+  animation: fadeIn 400ms ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

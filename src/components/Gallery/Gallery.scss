@@ -6,9 +6,9 @@ $gallery-gap: 1rem;
   column-gap: $gallery-gap;
 }
 
-.Gallery > * {
-  display: inline-block;
-  background: #fff;
+.Gallery-item {
+  display: block;
+  width: 100%;
   margin: 0 0 $gallery-gap;
 }
 
