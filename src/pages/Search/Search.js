@@ -1,9 +1,10 @@
 import React from 'react';
+import api from '../../services/api';
 import Header from '../../components/Header';
 import SearchBox from '../../components/SearchBox';
 import Gallery from '../../components/Gallery';
 import GalleryItem from '../../components/GalleryItem';
-import api from '../../services/api';
+import Loader from '../../components/Loader';
 import './Search.css';
 
 class Search extends React.Component {
@@ -45,7 +46,7 @@ class Search extends React.Component {
 
   render() {
     const { match: { params: { query = '' } } } = this.props;
-    const { assets } = this.state;
+    const { assets, isLoading } = this.state;
 
     const galleryItems = assets.map(({ data, links }) => {
       const id = data[0].nasaId;
@@ -67,6 +68,7 @@ class Search extends React.Component {
           </Header>
         </div>
         <div className="Search-content">
+          {isLoading && <Loader />}
           <Gallery>{galleryItems}</Gallery>
         </div>
       </div>

@@ -4,7 +4,9 @@ import './Gallery.css';
 
 const Gallery = ({ children }) => {
   const galleryItems = children.map(child => (
-    <div className="Gallery-item">{child}</div>
+    <div className="Gallery-item" key={Math.random()}>
+      {child}
+    </div>
   ));
 
   return <div className="Gallery">{galleryItems}</div>;
