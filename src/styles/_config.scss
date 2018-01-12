@@ -6,10 +6,10 @@ $max-width: 1024px;
 $color-primary: #1a5dad;
 
 $color-gray: #7a8fa2;
-$color-gray-light: lighten(#7a8fa2, 10%);
-$color-gray-lighter: #dae0e4;
-$color-gray-dark: darken(#7a8fa2, 20%);
-$color-gray-darker: darken(#7a8fa2, 30%);
+$color-gray-light: lighten($color-gray, 10%);
+$color-gray-lighter: lighten($color-gray, 20%);
+$color-gray-dark: darken($color-gray, 20%);
+$color-gray-darker: darken($color-gray, 30%);
 
 $spacer-xs: 0.5rem;
 $spacer-sm: 0.8rem;
