@@ -7,9 +7,11 @@ $gallery-gap: 1rem;
 }
 
 .Gallery-item {
+  position: relative;
   display: block;
   width: 100%;
   margin: 0 0 $gallery-gap;
+  break-inside: avoid-column;
 }
 
 @media only screen and (min-width: 460px) {
